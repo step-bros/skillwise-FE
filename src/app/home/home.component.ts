@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 type Course = {
   name: string;
@@ -15,6 +16,11 @@ type Course = {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  chatForm = new FormGroup({
+    message: new FormControl('', Validators.required)
+  })
+
   courses: Course[] = [
     {
       name: 'The Complete 2023 Web Development...',
@@ -49,5 +55,9 @@ export class HomeComponent {
       reward: 100
     }
   ];
+
+  onChatSubmit() {
+    this.chatForm.reset();
+  }
 
 }

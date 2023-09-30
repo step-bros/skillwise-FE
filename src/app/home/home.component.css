@@ -53,7 +53,7 @@
     line-height: normal;
 }
 
-.card-header{
+.card-header {
     position: relative;
 }
 
@@ -62,10 +62,27 @@
     border: 1px solid #000;
 }
 
-.card-badge{
+.card-badge {
+    position: relative;
+}
+
+.card-badge-content {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.card-badge-content-text {
+    position: absolute;
+    bottom: 1.15rem;
+    left: 1.5rem;
+
+    color: #060000;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .card-title {
@@ -90,13 +107,13 @@
     margin: 3.5rem 3.5rem 0 0;
 }
 
-.card-progress{
+.card-progress {
     width: 100%;
     border: 2px solid #000;
     margin-left: auto;
 }
 
-.progress-bar{
+.progress-bar {
     background-color: #2FCDC4;
     display: flex;
     align-items: center;

@@ -7,7 +7,8 @@
                     <h1 class="welcome-name">Darrick</h1>
                 </div>
                 <p class="description">
-                    SkillWise is a talent management and learning platform with AI-driven personalized course recommendations and gamification elements to make learning fun and engaging.
+                    SkillWise is a talent management and learning platform with AI-driven personalized course
+                    recommendations and gamification elements to make learning fun and engaging.
                 </p>
             </div>
             <div class="ml-auto">
@@ -27,14 +28,17 @@
             <ng-container class="card-container" *ngFor="let course of courses">
                 <div class="card w-fit">
                     <div class="card-header">
-                        <img class ="card-thumbnail" src="{{ course.thumbnailUrl }}" alt="{{ course.name }} thumbnail">
-                        <img class="card-badge" src="/assets/etc/gold-coin.png" alt="badge">
-                        <p></p>
+                        <img class="card-thumbnail" src="{{ course.thumbnailUrl }}" alt="{{ course.name }} thumbnail">
+                        <div class="card-badge">
+                            <img class="card-badge-content" src="/assets/etc/gold-coin.png" alt="badge">
+                            <p class="card-badge-content-text">+{{course.reward}}</p>
+                        </div>
+
                     </div>
                     <div class="card-body px-4 py-2">
                         <h3 class="card-title">{{ course.name }}</h3>
                         <p class="card-description">{{ course.description }}</p>
-                        
+
                         <div class="flex flex-row gap-8 items-center">
                             <img src="{{ course.logoUrl }}" alt="{{ course.name }} logo" class="logo-small">
                             <div class="card-progress">

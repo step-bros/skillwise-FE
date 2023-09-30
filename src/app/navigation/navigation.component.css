@@ -6,3 +6,12 @@
     font-weight: 400;
     line-height: normal;
 }
+
+.logo-text {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 1.1875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

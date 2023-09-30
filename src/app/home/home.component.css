@@ -1,0 +1,32 @@
+.description {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    width: 27.6875rem;
+}
+
+.welcome-name {
+    color: #2FCDC4;
+    font-family: Inter;
+    font-size: 2.2725rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.welcome {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 2.2725rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.welcome-header {
+    margin-left: 3.5rem;
+}

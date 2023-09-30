@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 })
 export class NavigationComponent {
   constructor(private profileService: ProfileService) { }
-  profile$: Observable<Profile> = this.profileService.getProfile();
+  profile$: Observable<Profile> = this.profileService.getProfile$();
   profile: Profile = {
     name: '',
     streak: 0,

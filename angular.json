@@ -64,7 +64,8 @@
               "browserTarget": "skillwise-fe:build:production"
             },
             "development": {
-              "browserTarget": "skillwise-fe:build:development"
+              "browserTarget": "skillwise-fe:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

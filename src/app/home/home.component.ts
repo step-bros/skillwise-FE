@@ -20,10 +20,6 @@ export class HomeComponent {
 
   constructor(private profileService: ProfileService) { }
 
-  chatForm = new FormGroup({
-    message: new FormControl('', Validators.required)
-  })
-
   courses: Course[] = [
     {
       name: 'The Complete 2023 Web Development...',
@@ -46,10 +42,6 @@ export class HomeComponent {
         });
       }
     });
-  }
-
-  onChatSubmit() {
-    this.chatForm.reset();
   }
 
 }

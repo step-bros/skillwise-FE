@@ -21,14 +21,7 @@
             </button>
         </section>
     </header>
-
-    <section>
-        <h2>Chatbot</h2>
-        <form [formGroup]="chatForm" (submit)="onChatSubmit()" onsubmit="return false">
-            <input formControlName="message" type="text" class="chat-input px-2" placeholder="Ask me anything...">
-        </form>
-    </section>
-
+    
     <section>
         <h2>Let's Continue</h2>
         <section class="grid grid-cols-4 gap-8 continue-grid">

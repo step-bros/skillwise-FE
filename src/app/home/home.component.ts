@@ -35,19 +35,22 @@ export class HomeComponent {
   courses: Course[] = [];
 
   ngOnInit(): void {
-    this.courseService.getCourses$().subscribe((courses : any) => {
-      this.courses = courses;
-    });
-
     this.profileService.getCourses$().subscribe((courses : any) => {
       this.enrolledCourses = courses;
 
       for (let course of this.enrolledCourses) {
         this.profileService.getProgress$(course.name).subscribe((progress : any) => {
-          console.log(progress);
           course.progress = progress;
         });
       }
+
+      this.courseService.getCourses$().subscribe((courses : any) => {
+        this.courses = courses.filter((course : any) => {
+          return !this.enrolledCourses.some((enrolledCourse : any) => {
+            return enrolledCourse.name === course.name;
+          }
+        )});
+      });
     });
   }
 

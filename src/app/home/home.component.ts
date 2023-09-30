@@ -22,7 +22,7 @@ export class HomeComponent {
       logoUrl: 'assets/logos/udemy.svg',
       thumbnailUrl: 'assets/thumbnails/web-dev.png',
       progress: 20,
-      reward: 100
+      reward: 15
     },
     {
       name: 'The Complete 2023 Web Development...',

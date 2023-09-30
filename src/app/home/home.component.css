@@ -77,6 +77,8 @@
     position: absolute;
     bottom: 1.15rem;
     left: 1.5rem;
+    width: 2rem;
+    text-align: center;
 
     color: #060000;
     font-family: Inter;

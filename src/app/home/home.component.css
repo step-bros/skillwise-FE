@@ -27,6 +27,11 @@
     line-height: normal;
 }
 
-.welcome-header {
-    margin-left: 3.5rem;
+.main-content{
+    padding-left: 3.5rem;
+}
+
+.browse-button{
+    background-color: #2FCDC4;
+    color: black;
 }

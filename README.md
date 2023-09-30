@@ -5,7 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 1)Git clone
-2)open terminal in your VSC (Command prompt) type in "npm install"
+
+2)open terminal in your VSC (Command prompt) type in `npm install`
+
 3)Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding

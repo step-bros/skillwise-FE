@@ -6,6 +6,7 @@ type Course = {
   logoUrl: string;
   thumbnailUrl: string;
   progress: number;
+  reward: number;
 }
 
 @Component({
@@ -20,28 +21,32 @@ export class HomeComponent {
       description: 'Become a Full-Stack Web Developer with just ONE course. HTML,...',
       logoUrl: 'assets/logos/udemy.svg',
       thumbnailUrl: 'assets/thumbnails/web-dev.png',
-      progress: 20
+      progress: 20,
+      reward: 100
     },
     {
       name: 'The Complete 2023 Web Development...',
       description: 'Become a Full-Stack Web Developer with just ONE course. HTML,...',
       logoUrl: 'assets/logos/udemy.svg',
       thumbnailUrl: 'assets/thumbnails/web-dev.png',
-      progress: 40
+      progress: 40,
+      reward: 100
     },
     {
       name: 'The Complete 2023 Web Development...',
       description: 'Become a Full-Stack Web Developer with just ONE course. HTML,...',
       logoUrl: 'assets/logos/udemy.svg',
       thumbnailUrl: 'assets/thumbnails/web-dev.png',
-      progress: 60
+      progress: 60,
+      reward: 100
     },
     {
       name: 'The Complete 2023 Web Development...',
       description: 'Become a Full-Stack Web Developer with just ONE course. HTML,...',
       logoUrl: 'assets/logos/udemy.svg',
       thumbnailUrl: 'assets/thumbnails/web-dev.png',
-      progress: 80
+      progress: 80,
+      reward: 100
     }
   ];
 

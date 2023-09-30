@@ -60,6 +60,7 @@
 .card-thumbnail {
     border-radius: 1.25rem 1.25rem 0 0;
     border: 1px solid #000;
+    width: 100%;
 }
 
 .card-badge {
@@ -104,7 +105,8 @@
 }
 
 .continue-grid {
-    margin: 3.5rem 3.5rem 0 0;
+    margin: 0 3.5rem 3.5rem 0;
+    align-items: start;
 }
 
 .card-progress {

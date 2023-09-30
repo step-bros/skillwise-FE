@@ -59,7 +59,7 @@
 }
 
 /* grid */
-.continue-grid {
+.course-grid {
     align-items: start;
 }
 
@@ -75,6 +75,8 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    height: 100%;
 }
 
 .card-header {
@@ -119,6 +121,15 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    overflow: hidden;
+    max-height: 3rem;
+}
+
+.card-description{
+    overflow: hidden;
+    min-height: 2rem;
+    max-height: 2rem;
 }
 
 .card-body {

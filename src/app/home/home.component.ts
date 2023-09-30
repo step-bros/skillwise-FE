@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProfileService } from '../profile.service';
+import { CourseService } from '../course.service';
 
 type Course = {
   name: string;
@@ -18,9 +19,9 @@ type Course = {
 })
 export class HomeComponent {
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private profileService: ProfileService, private courseService: CourseService) { }
 
-  courses: Course[] = [
+  enrolledCourses: Course[] = [
     {
       name: 'The Complete 2023 Web Development...',
       description: 'Become a Full-Stack Web Developer with just ONE course. HTML,...',
@@ -31,11 +32,17 @@ export class HomeComponent {
     },
   ];
 
-  ngOnInit(): void {
-    this.profileService.getCourses().subscribe((courses : any) => {
-      this.courses = courses;
+  courses: Course[] = [];
 
-      for (let course of this.courses) {
+  ngOnInit(): void {
+    this.courseService.getCourses$().subscribe((courses : any) => {
+      this.courses = courses;
+    });
+
+    this.profileService.getCourses$().subscribe((courses : any) => {
+      this.enrolledCourses = courses;
+
+      for (let course of this.enrolledCourses) {
         this.profileService.getProgress$(course.name).subscribe((progress : any) => {
           console.log(progress);
           course.progress = progress;

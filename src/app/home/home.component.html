@@ -21,11 +21,11 @@
             </button>
         </section>
     </header>
-    
+
     <section>
         <h2>Let's Continue</h2>
-        <section class="grid grid-cols-4 gap-8 continue-grid">
-            <ng-container class="card-container" *ngFor="let course of courses">
+        <section class="grid grid-cols-4 gap-8 course-grid">
+            <ng-container class="card-container" *ngFor="let course of enrolledCourses">
                 <div class="card w-fit">
                     <div class="card-header">
                         <img class="card-thumbnail" src="{{ course.thumbnailUrl }}" alt="{{ course.name }} thumbnail">
@@ -40,12 +40,38 @@
                         <p class="card-description">{{ course.description }}</p>
 
                         <div class="flex flex-row gap-8 items-center">
-                            <img src="{{ course.logoUrl }}" alt="{{ course.name }} logo" class="logo-small">
+                            <img width="42" src="{{ course.logoUrl }}" alt="{{ course.name }} logo" class="logo-small">
                             <div class="card-progress">
                                 <div class="progress-bar">
                                     {{course.progress}}%
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </section>
+    </section>
+
+    <section class="mb-4">
+        <h2>Recommendations by AI</h2>
+        <section class="grid grid-cols-4 gap-8 course-grid">
+            <ng-container class="card-container" *ngFor="let course of courses">
+                <div class="card w-fit">
+                    <div class="card-header">
+                        <img class="card-thumbnail" src="{{ course.thumbnailUrl }}" alt="{{ course.name }} thumbnail">
+                        <div class="card-badge">
+                            <img class="card-badge-content" src="/assets/etc/gold-coin.png" alt="badge">
+                            <p class="card-badge-content-text">+{{course.reward}}</p>
+                        </div>
+
+                    </div>
+                    <div class="card-body px-4 py-2">
+                        <h3 class="card-title">{{ course.name }}</h3>
+                        <p class="card-description">{{ course.description }}</p>
+
+                        <div class="mt-auto flex flex-row gap-8 items-center">
+                            <img width="40" height="32" src="{{ course.logoUrl }}" alt="{{ course.name }} logo" class="logo-small">
                         </div>
                     </div>
                 </div>

@@ -39,7 +39,7 @@ export class ProfileService {
     return this.http.get(API_PATH + this.profile.name + "/progress", options);
   }
 
-  getCourses() {
+  getCourses$() {
     return this.http.get(API_PATH + this.profile.name + "/courses");
   }
 }

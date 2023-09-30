@@ -27,11 +27,70 @@
     line-height: normal;
 }
 
-.main-content{
+.main-content {
     padding-left: 3.5rem;
 }
 
-.browse-button{
+.browse-button {
     background-color: #2FCDC4;
     color: black;
+}
+
+.logo-small {
+    height: 2rem;
+}
+
+.card {
+    border-radius: 1.25rem;
+    border: 2px solid #000;
+    background: #F0F0F0;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 1.1875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-thumbnail {
+    border-radius: 1.25rem 1.25rem 0 0;
+    border: 1px solid #000;
+}
+
+.card-title {
+    color: #000;
+    font-family: Inter;
+    font-size: 1.1875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-body {
+    color: #000;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.continue-grid {
+    margin: 3.5rem 3.5rem 0 0;
+}
+
+.card-progress{
+    width: 100%;
+    border: 2px solid #000;
+    margin-left: auto;
+}
+
+.progress-bar{
+    background-color: #2FCDC4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
 }

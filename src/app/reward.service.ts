@@ -5,11 +5,11 @@ import { API_PATH } from './environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
+export class RewardService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getCourses$() {
-    return this.http.get(API_PATH + 'courses');
+  getRewards$() {
+    return this.http.get(API_PATH + 'rewards');
   }
 }

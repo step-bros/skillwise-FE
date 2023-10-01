@@ -10,6 +10,8 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
+  subscription: any;
+
   constructor(private profileService: ProfileService) { }
   profile$: Observable<Profile> = this.profileService.getProfile$();
   profile: Profile = {
@@ -19,9 +21,13 @@ export class NavigationComponent {
   };
 
   ngOnInit(): void {
-    this.profile$.pipe(first()).subscribe(profile => {
+    this.subscription = this.profile$.subscribe(profile => {
       this.profile = profile;
-    }).unsubscribe();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

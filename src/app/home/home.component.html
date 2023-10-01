@@ -26,7 +26,7 @@
         <h2>Let's Continue</h2>
         <section class="grid grid-cols-4 gap-8 course-grid">
             <ng-container class="card-container" *ngFor="let course of enrolledCourses">
-                <div class="card w-fit">
+                <div class="card">
                     <div class="card-header">
                         <img class="card-thumbnail" src="{{ course.thumbnailUrl }}" alt="{{ course.name }} thumbnail">
                         <div class="card-badge">
@@ -53,11 +53,11 @@
         </section>
     </section>
 
-    <section class="mb-4">
+    <section>
         <h2>Recommendations by AI</h2>
         <section class="grid grid-cols-4 gap-8 course-grid">
             <ng-container class="card-container" *ngFor="let course of courses">
-                <div class="card w-fit">
+                <div class="card">
                     <div class="card-header">
                         <img class="card-thumbnail" src="{{ course.thumbnailUrl }}" alt="{{ course.name }} thumbnail">
                         <div class="card-badge">
@@ -72,8 +72,43 @@
 
                         <div class="mt-auto flex flex-row gap-8 items-center">
                             <img width="40" height="32" src="{{ course.logoUrl }}" alt="{{ course.name }} logo" class="logo-small">
+                            <button (click)="onEnroll(course)" class="ml-auto card-button">
+                                Enroll
+                            </button>
                         </div>
                     </div>
+                </div>
+            </ng-container>
+        </section>
+    </section>
+
+     <section>
+        <h2>Rewards</h2>
+        <section class="grid grid-cols-4 gap-8 course-grid">
+            <ng-container class="card-container" *ngFor="let reward of rewards">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="card-thumbnail" src="{{ reward.thumbNailUrl }}" alt="{{ reward.name }} thumbnail">
+                        <div class="card-badge">
+                            <img class="card-badge-content" src="/assets/etc/gold-coin.png" alt="badge">
+                            <p *ngIf="reward.cost > 0 else negativeCost" class="card-badge-content-text" style="color:red;">-{{reward.cost}}</p>
+                            <ng-template #negativeCost>
+                                <p class="card-badge-content-text">+{{-reward.cost}}</p>
+                            </ng-template>
+                        </div>
+
+                    </div>
+                    <div class="card-body px-4 py-2">
+                        <h3 class="card-title">{{ reward.name }}</h3>
+                        <p class="card-description">{{ reward.description }}</p>
+
+                        <div class="mt-auto flex flex-row gap-8 items-center">
+                            <button (click)="onClaim(reward)" class="ml-auto card-button">
+                                Claim
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </ng-container>
         </section>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProfileService } from '../profile.service';
 import { CourseService } from '../course.service';
+import { RewardService } from '../reward.service';
 
 type Course = {
   name: string;
@@ -12,6 +13,13 @@ type Course = {
   reward: number;
 }
 
+type Reward = {
+  name: string;
+  description: string;
+  thumbNailUrl: string;
+  cost: number;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,7 +27,9 @@ type Course = {
 })
 export class HomeComponent {
 
-  constructor(private profileService: ProfileService, private courseService: CourseService) { }
+  constructor(private profileService: ProfileService, 
+    private courseService: CourseService, 
+    private rewardService: RewardService) { }
 
   enrolledCourses: Course[] = [
     {
@@ -31,6 +41,8 @@ export class HomeComponent {
       reward: 15
     },
   ];
+
+  rewards : Reward[] = [];
 
   courses: Course[] = [];
 
@@ -52,6 +64,25 @@ export class HomeComponent {
         )});
       });
     });
+
+    this.rewardService.getRewards$().subscribe((rewards : any) => {
+      this.rewards = rewards;
+    });
   }
 
+  onEnroll(course: Course){
+    this.profileService.enroll$(course.name).subscribe((enrolled : any) => {
+      course.progress = 0;
+      this.enrolledCourses.push(course);
+      this.courses = this.courses.filter((c : any) => c.name !== course.name);
+    });
+  }
+
+  onClaim(reward: Reward){
+    this.profileService.claimReward$(reward.name).subscribe((claimed : any) => {
+      this.profileService.getProfile$().subscribe((profile : any) => {
+        this.rewards = this.rewards.filter((r : any) => r.name !== reward.name);
+      });
+    });
+  }
 }

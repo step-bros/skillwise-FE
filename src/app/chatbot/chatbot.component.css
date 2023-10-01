@@ -1,0 +1,13 @@
+.chatForm{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.chatInputLabel{
+    flex-basis: 100%;
+    margin-bottom: -2.5rem;
+}

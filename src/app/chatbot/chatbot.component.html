@@ -1,0 +1,14 @@
+<section>
+    <ng-container *ngIf="waiting">
+        <p>Please wait...</p>
+    </ng-container>
+    <div class="p-4 mb-2 border-white border-2 border-solid rounded-lg" *ngFor="let message of messages; index as i">
+        <p>You asked: {{inputMessages[i]}}</p>
+        <p>Response: {{message}}</p>
+    </div>
+    <form class="chatForm" [formGroup]="chatForm" (submit)="onSubmit()">
+        <label class="text-white chatInputLabel">Ask Me Anything</label>
+        <input class="rounded-sm" id="message" type="text" formControlName="chatInput">
+        <button class="bg-white px-2 py-1 rounded-md" type="submit">Submit</button>
+    </form>
+</section>
